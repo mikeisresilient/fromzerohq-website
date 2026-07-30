@@ -74,7 +74,7 @@ function Hero() {
       <Container className="relative z-10 grid items-center gap-20 lg:grid-cols-2">
         {/* LEFT */}
 
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="-mt-10 lg:mt-0">
+        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="-mt-12 lg:mt-0">
           <motion.div
             custom={0}
             variants={fadeUp}
