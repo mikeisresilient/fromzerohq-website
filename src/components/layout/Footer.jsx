@@ -1,10 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 import Container from "../ui/Container";
 import Button from "../ui/Button";
@@ -105,7 +100,7 @@ function Footer() {
                   window.open(
                     "https://calendar.app.google/bLpy1afX6e6HUCMs6",
                     "_blank",
-                    "noopener,noreferrer"
+                    "noopener,noreferrer",
                   )
                 }
                 className="whitespace-nowrap px-8 py-4 text-base"
@@ -118,7 +113,7 @@ function Footer() {
           {/* Footer Content */}
 
           <div className="mt-24 grid gap-16 lg:grid-cols-[2fr_1fr_1fr]">
-                        {/* Brand */}
+            {/* Brand */}
 
             <div>
               <img
@@ -177,7 +172,7 @@ function Footer() {
                     window.open(
                       "https://calendar.app.google/bLpy1afX6e6HUCMs6",
                       "_blank",
-                      "noopener,noreferrer"
+                      "noopener,noreferrer",
                     )
                   }
                   className="mt-6"
@@ -186,7 +181,7 @@ function Footer() {
                 </Button>
               </div>
             </div>
-                        {/* Platform */}
+            {/* Platform */}
 
             <div>
               <h3 className="mb-8 text-sm font-bold uppercase tracking-[0.2em] text-white">
@@ -252,13 +247,12 @@ function Footer() {
                 </a>
               </div>
             </div>
-
           </div>
 
           {/* Divider */}
 
           <div className="my-16 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                    {/* Bottom Bar */}
+          {/* Bottom Bar */}
 
           <div className="flex flex-col items-center justify-between gap-6 pb-12 text-center md:flex-row md:text-left">
             <div>
@@ -269,6 +263,18 @@ function Footer() {
 
               <p className="mt-2 text-sm text-gray-500">
                 Creator Marketing, Engineered for Results.
+              </p>
+              <p className="mt-3 text-xs text-gray-500">
+                Website developed by{" "}
+                <a
+                  href="https://linktr.ee/mikeisresilient"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1 font-medium text-green-400 transition-colors duration-300 hover:text-green-300"
+                >
+                  Michael Ege
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
               </p>
             </div>
 
