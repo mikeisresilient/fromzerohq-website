@@ -6,10 +6,7 @@ import Container from "../ui/Container";
 
 function Cta() {
   return (
-    <section
-      id="contact"
-      className="relative overflow-hidden py-32"
-    >
+    <section id="contact" className="relative overflow-hidden py-32">
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-green-500/10 blur-[170px]" />
@@ -44,7 +41,6 @@ function Cta() {
 
             <div className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-sm font-medium text-green-400">
               <Sparkles size={16} />
-
               Let's Build Something Great
             </div>
 
@@ -52,7 +48,6 @@ function Cta() {
 
             <h2 className="mt-8 text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
               Turn Creator Marketing Into
-
               <span className="mt-2 block text-green-400">
                 Your Competitive Advantage
               </span>
@@ -69,15 +64,22 @@ function Cta() {
             {/* Buttons */}
 
             <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-              <Button>
+              <Button
+                type="button"
+                onClick={() =>
+                  window.open(
+                    "https://calendar.app.google/bLpy1afX6e6HUCMs6",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+              >
                 <CalendarDays size={18} />
-
                 Book Strategy Call
               </Button>
 
               <Button variant="secondary">
                 Learn More
-
                 <ArrowRight size={18} />
               </Button>
             </div>

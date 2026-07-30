@@ -8,6 +8,8 @@ import Container from "../ui/Container";
 import HeroDashboard from "../hero/HeroDashboard";
 
 import { company } from "../../data/company";
+import { useContext } from "react";
+import { ScrollContext } from "../../context/ScrollContext";
 
 const trustPoints = [
   "Verified creators only",
@@ -32,6 +34,7 @@ const fadeUp = {
 };
 
 function Hero() {
+  const { dashboardRef } = useContext(ScrollContext);
   return (
     <section
       id="home"
@@ -71,11 +74,7 @@ function Hero() {
       <Container className="relative z-10 grid items-center gap-20 lg:grid-cols-2">
         {/* LEFT */}
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-        >
+        <motion.div initial="hidden" animate="visible" variants={fadeUp}>
           <motion.div
             custom={0}
             variants={fadeUp}
@@ -107,14 +106,30 @@ function Hero() {
             variants={fadeUp}
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <Button>
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://calendar.app.google/bLpy1afX6e6HUCMs6",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+            >
               <span className="flex items-center gap-2">
                 Book Strategy Call
                 <ArrowRight size={18} />
               </span>
             </Button>
 
-            <Button variant="secondary">
+            <Button
+              variant="secondary"
+              onClick={() =>
+                dashboardRef.current?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+            >
               Explore Platform
             </Button>
           </motion.div>
@@ -127,15 +142,9 @@ function Hero() {
             className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-1"
           >
             {trustPoints.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3"
-              >
+              <div key={item} className="flex items-center gap-3">
                 <div className="rounded-full bg-green-500/10 p-1">
-                  <CheckCircle2
-                    size={16}
-                    className="text-green-400"
-                  />
+                  <CheckCircle2 size={16} className="text-green-400" />
                 </div>
 
                 <span className="text-sm text-gray-300 sm:text-base">

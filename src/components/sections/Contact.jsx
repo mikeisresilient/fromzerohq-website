@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ArrowUpRight,
-} from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 import Container from "../ui/Container";
 import SectionHeading from "../ui/SectionHeading";
@@ -21,9 +16,7 @@ function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <SectionLabel>
-              Contact
-            </SectionLabel>
+            <SectionLabel>Contact</SectionLabel>
 
             <SectionHeading>
               Let's build your next creator marketing campaign.
@@ -59,16 +52,23 @@ function Contact() {
             transition={{ duration: 0.6 }}
             className="rounded-3xl border border-white/10 bg-white/5 p-8"
           >
-            <h3 className="text-2xl font-bold">
-              Ready to grow?
-            </h3>
+            <h3 className="text-2xl font-bold">Ready to grow?</h3>
 
             <p className="mt-4 text-gray-400">
-              Book a strategy session and discover how creator marketing
-              can accelerate your business.
+              Book a strategy session and discover how creator marketing can
+              accelerate your business.
             </p>
 
-            <button className="mt-10 flex items-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-semibold text-black transition hover:bg-green-400">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://calendar.app.google/bLpy1afX6e6HUCMs6",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+              className="mt-10 flex items-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-semibold text-black transition hover:bg-green-400"
+            >
               Book Strategy Call
               <ArrowUpRight size={18} />
             </button>
