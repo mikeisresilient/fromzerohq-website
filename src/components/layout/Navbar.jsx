@@ -8,9 +8,6 @@ import { useActiveSection } from "../../context/ActiveSectionContext";
 
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import Modal from "../ui/Modal";
-import BookingForm from "../ui/BookingForm";
-import SuccessMessage from "../ui/SuccessMessage";
 
 const homeLinks = [
   { label: "Platform", section: "platform" },
@@ -31,8 +28,6 @@ const caseStudyLinks = [
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const [bookingComplete, setBookingComplete] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -103,19 +98,11 @@ function Navbar() {
   };
 
   const handleBookingClick = () => {
-    // For now, open the booking form.
-    // When the client sends the Calendly link,
-    // this is the only function you'll need to change.
-    setBookingComplete(false);
-    setBookingOpen(true);
-  };
-
-  const handleBookingSubmit = (formData) => {
-    console.log("Booking Request:", formData);
-
-    // EmailJS or Calendly integration comes later.
-
-    setBookingComplete(true);
+    window.open(
+      "https://calendar.app.google/bLpy1afX6e6HUCMs6",
+      "_blank",
+      "noopener,noreferrer",
+    );
   };
 
   const desktopItem = (link) => {
@@ -194,20 +181,12 @@ function Navbar() {
                 : "border-transparent bg-transparent"
             }`}
           >
-            <Link to="/" className="group flex items-center gap-4">
+            <Link to="/" className="group flex items-center">
               <img
-                src="/FromZeroHQ.jpeg"
-                alt="FromZeroHQ Logo"
-                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:rotate-3 group-hover:scale-105"
+                src="/FromZeroHQ.png"
+                alt="FromZeroHQ"
+                className="h-38 w-auto transition-all duration-300 group-hover:scale-105"
               />
-
-              <div className="hidden sm:block">
-                <h3 className="font-bold text-white">FromZeroHQ</h3>
-
-                <p className="text-xs text-green-400">
-                  Creator Marketing Infrastructure
-                </p>
-              </div>
             </Link>
 
             <nav className="hidden lg:block">
@@ -219,8 +198,11 @@ function Navbar() {
             </nav>
 
             <div className="hidden lg:block">
-              <Button onClick={handleBookingClick}>
-                Book Strategy Call
+              <Button
+                onClick={handleBookingClick}
+                className="hover:scale-105 transition-transform duration-300"
+              >
+                Book a Strategy Call
               </Button>
             </div>
 
@@ -268,27 +250,6 @@ function Navbar() {
           </AnimatePresence>
         </Container>
       </header>
-
-      <Modal
-        open={bookingOpen}
-        onClose={() => {
-          setBookingOpen(false);
-          setBookingComplete(false);
-        }}
-        title="Book Your Strategy Call"
-        description="Tell us about your business and we'll reach out within 24 hours."
-      >
-        {bookingComplete ? (
-          <SuccessMessage
-            onClose={() => {
-              setBookingOpen(false);
-              setBookingComplete(false);
-            }}
-          />
-        ) : (
-          <BookingForm onSubmit={handleBookingSubmit} />
-        )}
-      </Modal>
     </>
   );
 }
