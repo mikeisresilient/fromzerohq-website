@@ -181,7 +181,7 @@ function Navbar() {
                 : "border-transparent bg-transparent"
             }`}
           >
-            <Link to="/" className="group flex items-center">
+            <Link to="/" className="group flex items-center -ml-15">
               <img
                 src="/FromZeroHQ.png"
                 alt="FromZeroHQ"
