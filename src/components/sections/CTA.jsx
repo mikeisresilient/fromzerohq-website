@@ -78,10 +78,7 @@ function Cta() {
                 Book Strategy Call
               </Button>
 
-              <Button variant="secondary">
-                Learn More
-                <ArrowRight size={18} />
-              </Button>
+      
             </div>
 
             {/* Trust Points */}
