@@ -46,7 +46,7 @@ function Contact() {
               Let's build your next creator marketing campaign.
             </SectionHeading>
 
-            <p className="mt-6 text-gray-400 leading-8">
+            <p className="-mt-15 text-gray-400 leading-8">
               Whether you're launching a new campaign or scaling an existing
               one, we'd love to hear about your goals.
             </p>
