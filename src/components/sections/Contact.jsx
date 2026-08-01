@@ -1,9 +1,33 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { FaTelegram, FaDiscord, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 
 import Container from "../ui/Container";
 import SectionHeading from "../ui/SectionHeading";
 import SectionLabel from "../ui/SectionLabel";
+
+const socialLinks = [
+  {
+    icon: FaTelegram,
+    label: "Telegram",
+    href: "https://t.me/pleasurestack",
+  },
+  {
+    icon: FaXTwitter,
+    label: "X",
+    href: "https://x.com/FromZeroHQ",
+  },
+  {
+    icon: FaDiscord,
+    label: "Discord",
+    href: "https://discord.com/users/pleasurestack",
+  },
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    href: "https://wa.me/2347067924568",
+  },
+];
 
 function Contact() {
   return (
@@ -28,14 +52,26 @@ function Contact() {
             </p>
 
             <div className="mt-10 space-y-6">
-              <div className="flex items-center gap-4">
-                <Mail className="text-green-400" />
-                <span>hello@fromzerohq.com</span>
-              </div>
+              <div className="mt-6 flex flex-wrap gap-4">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
 
-              <div className="flex items-center gap-4">
-                <Phone className="text-green-400" />
-                <span>+234 xxx xxx xxxx</span>
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3 text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/30 hover:bg-green-500/10 hover:text-green-400 hover:shadow-[0_10px_30px_rgba(34,197,94,.15)]"
+                    >
+                      <Icon className="text-lg" />
+
+                      <span className="text-sm font-medium">
+                        {social.label}
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
 
               <div className="flex items-center gap-4">
