@@ -132,7 +132,6 @@ function Footer() {
                 creator partnerships through intelligent infrastructure built
                 for modern marketing teams.
               </p>
-              {/* Trigger redeploy */}
               <div className="mt-8 ml-5 flex flex-wrap items-center gap-5">
                 {" "}
                 {socialLinks.map((social) => {
