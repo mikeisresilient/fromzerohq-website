@@ -10,6 +10,7 @@ import HeroDashboard from "../hero/HeroDashboard";
 import { company } from "../../data/company";
 import { useContext } from "react";
 import { ScrollContext } from "../../context/ScrollContext";
+import { FaTelegram } from "react-icons/fa6";
 
 const trustPoints = [
   "Verified creators only",
@@ -74,7 +75,12 @@ function Hero() {
       <Container className="relative z-10 grid items-center gap-20 lg:grid-cols-2">
         {/* LEFT */}
 
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} className="-mt-12 lg:mt-0">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          className="-mt-12 lg:mt-0"
+        >
           <motion.div
             custom={0}
             variants={fadeUp}
@@ -116,7 +122,7 @@ function Hero() {
               }
             >
               <span className="flex items-center gap-2">
-                Book Strategy Call
+                Book Discovery Call
                 <ArrowRight size={18} />
               </span>
             </Button>
@@ -124,13 +130,17 @@ function Hero() {
             <Button
               variant="secondary"
               onClick={() =>
-                dashboardRef.current?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
+                window.open(
+                  "https://t.me/pleasurestack",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
               }
             >
-              Explore Platform
+              <span className="flex items-center gap-2">
+                <FaTelegram size={18} />
+                Chat With Us
+              </span>
             </Button>
           </motion.div>
 

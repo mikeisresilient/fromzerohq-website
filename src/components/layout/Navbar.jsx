@@ -202,7 +202,7 @@ function Navbar() {
                 onClick={handleBookingClick}
                 className="hover:scale-105 transition-transform duration-300"
               >
-                Book a Strategy Call
+                Book a Discovery Call
               </Button>
             </div>
 
@@ -241,7 +241,7 @@ function Navbar() {
                         handleBookingClick();
                       }}
                     >
-                      Book Strategy Call
+                      Book Discovery Call
                     </Button>
                   </div>
                 </nav>

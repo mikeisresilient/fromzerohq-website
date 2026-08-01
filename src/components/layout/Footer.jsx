@@ -6,6 +6,7 @@ import { company } from "../../data/company";
 import { useContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ScrollContext } from "../../context/ScrollContext";
+import { Mail } from "lucide-react";
 
 const platformLinks = [
   {
@@ -57,6 +58,11 @@ const socialLinks = [
     icon: FaWhatsapp,
     href: "https://wa.me/2347067924568",
     label: "WhatsApp",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:fromzerotohq@gmail.com",
   },
 ];
 
@@ -127,7 +133,7 @@ function Footer() {
                 }
                 className="whitespace-nowrap px-8 py-4 text-base"
               >
-                Schedule a Strategy Call
+                Schedule a Discovery Call
               </Button>
             </div>
           </div>
@@ -345,7 +351,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-green-400 transition-colors hover:text-green-300"
                 >
-                  Schedule a strategy call
+                  Schedule a Discovery call
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               </div>

@@ -2,18 +2,18 @@ import { motion } from "framer-motion";
 
 const creators = [
   {
-    name: "Alex Morgan",
-    niche: "Fashion",
+    name: "Lois Code",
+    niche: "Trading",
     score: "98%",
   },
   {
-    name: "Sarah Kim",
-    niche: "Tech",
+    name: "Michael Ace",
+    niche: "Web3",
     score: "95%",
   },
   {
-    name: "Daniel Cole",
-    niche: "Lifestyle",
+    name: "David Wealth",
+    niche: "Forex",
     score: "94%",
   },
 ];

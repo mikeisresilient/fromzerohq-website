@@ -27,6 +27,11 @@ const socialLinks = [
     label: "WhatsApp",
     href: "https://wa.me/2347067924568",
   },
+  {
+    icon: Mail,
+    label: "Email",
+    href: "mailto:fromzerotohq@gmail.com",
+  },
 ];
 
 function Contact() {
@@ -73,11 +78,6 @@ function Contact() {
                   );
                 })}
               </div>
-
-              <div className="flex items-center gap-4">
-                <MapPin className="text-green-400" />
-                <span>Lagos, Nigeria</span>
-              </div>
             </div>
           </motion.div>
 
@@ -91,7 +91,7 @@ function Contact() {
             <h3 className="text-2xl font-bold">Ready to grow?</h3>
 
             <p className="mt-4 text-gray-400">
-              Book a strategy session and discover how creator marketing can
+              Book a discovery session and discover how creator marketing can
               accelerate your business.
             </p>
 
@@ -105,7 +105,7 @@ function Contact() {
               }
               className="mt-10 flex items-center gap-2 rounded-xl bg-green-500 px-6 py-4 font-semibold text-black transition hover:bg-green-400"
             >
-              Book Strategy Call
+              Book Discovery Call
               <ArrowUpRight size={18} />
             </button>
           </motion.div>

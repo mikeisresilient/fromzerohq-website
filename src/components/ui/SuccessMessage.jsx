@@ -21,7 +21,7 @@ function SuccessMessage({ onClose }) {
       </h3>
 
       <p className="mt-4 max-w-md leading-7 text-gray-400">
-        Your strategy call request has been received successfully.
+        Your discovery call request has been received successfully.
         Our team will review your information and contact you within
         24 hours.
       </p>

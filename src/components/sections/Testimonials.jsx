@@ -6,20 +6,20 @@ import SectionHeading from "../ui/SectionHeading";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Founder, Elevate Media",
+    name: "Dave Wealth",
+    role: "Founder, Wealth Aura Funded Propfirm",
     quote:
       "FromZeroHQ transformed our creator campaigns. We saw stronger engagement, better partnerships, and measurable business growth.",
   },
   {
-    name: "David Kim",
-    role: "Marketing Director, NovaTech",
+    name: "Michael Ege",
+    role: "Founder, CryptoSimplify Academy",
     quote:
       "Working with FromZeroHQ was effortless. Their strategy and execution exceeded our expectations from start to finish.",
   },
   {
-    name: "Jessica Brown",
-    role: "CEO, Bloom Digital",
+    name: "Lois Code",
+    role: "CEO, Trader Lab",
     quote:
       "Their understanding of creator marketing is exceptional. They delivered results that directly impacted our revenue.",
   },

@@ -181,7 +181,7 @@ function BookingForm({ onSubmit }) {
         type="submit"
         className="w-full rounded-xl bg-green-500 px-6 py-4 font-semibold text-black transition hover:bg-green-400"
       >
-        Book Strategy Call
+        Book Discovery Call
       </button>
     </form>
   );

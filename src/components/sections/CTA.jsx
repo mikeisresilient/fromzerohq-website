@@ -75,7 +75,7 @@ function Cta() {
                 }
               >
                 <CalendarDays size={18} />
-                Book Strategy Call
+                Book Discovery Call
               </Button>
 
       
