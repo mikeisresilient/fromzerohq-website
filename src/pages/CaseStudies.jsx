@@ -38,12 +38,20 @@ function CaseStudies() {
 
           <div className="mt-20 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] shadow-[0_25px_80px_rgba(0,0,0,.35)] backdrop-blur-xl lg:grid lg:grid-cols-2">
             {/* LEFT */}
-            <div className="border-b border-white/10 lg:border-b-0 lg:border-r">
+            <div className="group relative overflow-hidden">
               <img
                 src="/case-studies/traderlab-preview.png"
-                alt="TraderLab Case Study Preview"
-                className="h-full w-full object-cover"
+                alt="TraderLab Case Study"
+                className="w-full transition-transform duration-500 group-hover:scale-105"
               />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+              <div className="absolute bottom-6 left-6">
+                <span className="rounded-full bg-black/60 px-4 py-2 text-sm font-medium text-white backdrop-blur">
+                  Preview Only
+                </span>
+              </div>
             </div>
 
             {/* RIGHT */}
@@ -74,18 +82,20 @@ function CaseStudies() {
                 </span>
               </div>
 
-              <button
+              <Button className="mt-4"
                 onClick={() =>
                   window.open(
-                    "https://t.me/pleasurestack?text=Hi%20I'm%20interested%20in%20the%20TraderLab%20case%20study.",
+                    "https://t.me/pleasurestack?text=Hi%20Pleasure!%20I%20just%20read%20the%20TraderLab%20case%20study%20preview%20on%20FromZeroHQ.%20I'd%20love%20to%20read%20the%20full%20case%20study.",
                     "_blank",
                     "noopener,noreferrer",
                   )
                 }
-                className="mt-10 w-fit rounded-xl bg-green-500 px-8 py-4 font-semibold text-black transition hover:bg-green-400"
               >
                 Read Full Case Study
-              </button>
+              </Button>
+              <p className="mt-4 text-sm text-gray-500">
+                The full case study is available upon request.
+              </p>
             </div>
           </div>
         </Container>
