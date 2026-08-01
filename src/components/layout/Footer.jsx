@@ -1,6 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-
+import { FaDiscord, FaTelegram, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { company } from "../../data/company";
@@ -49,24 +48,24 @@ const companyLinks = [
 
 const socialLinks = [
   {
+    icon: FaTelegram,
+    href: "https://t.me/pleasurestack",
+    label: "Telegram",
+  },
+  {
     icon: FaXTwitter,
-    href: null,
+    href: "https://x.com/FromZeroHQ",
     label: "X",
   },
   {
-    icon: FaLinkedin,
-    href: null,
-    label: "LinkedIn",
+    icon: FaDiscord,
+    href: "https://discord.com/users/pleasurestack",
+    label: "Discord",
   },
   {
-    icon: FaInstagram,
-    href: null,
-    label: "Instagram",
-  },
-  {
-    icon: FaGithub,
-    href: null,
-    label: "GitHub",
+    icon: FaWhatsapp,
+    href: "https://wa.me/2347067924568",
+    label: "WhatsApp",
   },
 ];
 
@@ -85,13 +84,13 @@ function Footer() {
                 </span>
 
                 <h2 className="mt-6 text-3xl font-bold leading-tight text-white md:text-5xl">
-                  Ready to scale your creator marketing?
+                  Ready to build creator campaigns that actually perform?
                 </h2>
 
                 <p className="mt-6 max-w-xl leading-8 text-gray-400">
-                  Discover how FromZeroHQ can help your team find the right
-                  creators, streamline campaign management and measure
-                  performance with confidence.
+                  From creator discovery to campaign reporting, FromZeroHQ helps
+                  ambitious brands build high performing partnerships with
+                  confidence.
                 </p>
               </div>
 
@@ -115,11 +114,13 @@ function Footer() {
           <div className="mt-24 grid gap-16 lg:grid-cols-[2fr_1fr_1fr]">
             {/* Brand */}
 
-            <div>
+            <div className="relative inline-block">
+              <div className="absolute inset-0 rounded-full bg-green-500/10 blur-3xl" />
+
               <img
                 src="/FromZeroHQ.png"
-                alt="FromZeroHQ Logo"
-                className="h-24 w-auto transition-transform duration-300 hover:scale-[1.03]"
+                alt="FromZeroHQ"
+                className="relative -ml-5 h-24 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
               />
 
               <p className="mt-4 text-sm font-medium tracking-[0.25em] uppercase text-green-400">
@@ -132,7 +133,7 @@ function Footer() {
                 for modern marketing teams.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="group relative flex ml-5 h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/30 hover:bg-green-500/15 hover:text-green-400 hover:shadow-[0_0_30px_rgba(34,197,94,.2)]">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
 
@@ -151,34 +152,92 @@ function Footer() {
                       }`}
                     >
                       <Icon className="h-5 w-5" />
+                      <span
+                        className="
+                          pointer-events-none
+                          absolute
+                          -top-10
+                          left-1/2
+                          -translate-x-1/2
+                          rounded-lg
+                          bg-black
+                          px-3
+                          py-1
+                          text-xs
+                          text-white
+                          opacity-0
+                          transition-all
+                          duration-300
+                          group-hover:opacity-100
+                        "
+                      >
+                        {social.label}
+                      </span>
                     </a>
                   );
                 })}
               </div>
 
-              <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                <p className="text-sm font-semibold text-white">
-                  Need something custom?
-                </p>
+              <div className="group relative mt-10 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-6 transition-all duration-500 hover:-translate-y-2 hover:border-green-500/30 hover:shadow-[0_20px_50px_rgba(34,197,94,.15)]">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="relative z-10">
+                  {" "}
+                  <p className="text-sm font-semibold text-green-400 uppercase tracking-wider">
+                    Meet the Founder
+                  </p>
+                  <div className="mt-5 flex items-center gap-4">
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-3xl bg-green-500/20 blur-xl opacity-70 transition-all duration-500 group-hover:opacity-100" />
 
-                <p className="mt-3 text-sm leading-7 text-gray-400">
-                  Every creator marketing strategy is different. Book a free
-                  strategy session and let's discuss how FromZeroHQ can help
-                  your team achieve measurable results.
-                </p>
+                      <img
+                        src="/pleasure.jpg"
+                        alt="Pleasure"
+                        className="relative h-28 w-28 rounded-3xl border border-green-500/20 object-cover object-top shadow-[0_12px_35px_rgba(34,197,94,.2)] transition-all duration-500 group-hover:scale-105"
+                      />
+                    </div>
 
-                <Button
-                  onClick={() =>
-                    window.open(
-                      "https://calendar.app.google/bLpy1afX6e6HUCMs6",
-                      "_blank",
-                      "noopener,noreferrer",
-                    )
-                  }
-                  className="mt-6"
-                >
-                  Book a Call
-                </Button>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white transition-colors duration-300 group-hover:text-green-400">
+                        Pleasure
+                      </h3>
+
+                      <p className="mt-1 text-sm font-medium text-green-400">
+                        Creator • Strategist • Trader
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-5 leading-7 text-gray-400">
+                    Founder of FromZeroHQ, helping brands connect with creators
+                    through intelligent campaign management, measurable growth
+                    and scalable marketing infrastructure.
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
+                      CFD Trader
+                    </span>
+
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
+                      Product Manager
+                    </span>
+
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-300">
+                      Growth Strategist
+                    </span>
+                  </div>
+                  <div className="my-6 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <a
+                    href="https://x.com/pleasurestack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-5 py-3 font-medium text-green-400 transition-all duration-300 hover:-translate-y-1 hover:border-green-400 hover:bg-green-500 hover:text-black hover:shadow-[0_12px_30px_rgba(34,197,94,.25)]"
+                  >
+                    Follow on X
+                    <ArrowUpRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
             {/* Platform */}
@@ -193,7 +252,7 @@ function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:text-green-400"
+                      className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:translate-x-1 hover:text-green-400"
                     >
                       <span>{link.label}</span>
 
@@ -216,7 +275,7 @@ function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:text-green-400"
+                      className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:translate-x-1 hover:text-green-400"
                     >
                       <span>{link.label}</span>
 
@@ -273,7 +332,10 @@ function Footer() {
                   className="group inline-flex items-center gap-1 font-medium text-green-400 transition-colors duration-300 hover:text-green-300"
                 >
                   Michael Ege
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  <ArrowUpRight
+                    size={12}
+                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </a>
               </p>
             </div>
