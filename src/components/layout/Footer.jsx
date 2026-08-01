@@ -133,7 +133,8 @@ function Footer() {
                 for modern marketing teams.
               </p>
 
-              <div className="group relative flex ml-5 h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-green-500/30 hover:bg-green-500/15 hover:text-green-400 hover:shadow-[0_0_30px_rgba(34,197,94,.2)]">
+              <div className="mt-8 ml-5 flex flex-wrap items-center gap-5">
+                {" "}
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
 
