@@ -30,9 +30,7 @@ function CaseStudies() {
 
           {/* Placeholder */}
           <div className="mt-20 rounded-3xl border border-dashed border-white/10 bg-white/5 p-12 text-center backdrop-blur-xl">
-            <h2 className="text-2xl font-semibold">
-              Case studies coming soon
-            </h2>
+            <h2 className="text-2xl font-semibold">Case studies coming soon</h2>
 
             <p className="mx-auto mt-4 max-w-xl text-gray-400">
               We're documenting campaign results, creator partnerships, and
@@ -40,7 +38,16 @@ function CaseStudies() {
               stories.
             </p>
 
-            <Button href="#contact" className="mt-8">
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://calendar.app.google/bLpy1afX6e6HUCMs6",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+              className="mt-8"
+            >
               Book Strategy Call
             </Button>
           </div>

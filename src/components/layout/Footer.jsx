@@ -3,46 +3,37 @@ import { FaDiscord, FaTelegram, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { company } from "../../data/company";
+import { useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { ScrollContext } from "../../context/ScrollContext";
 
 const platformLinks = [
   {
     label: "Creator Discovery",
-    href: "#platform",
+    section: "platform",
   },
   {
     label: "Campaign Management",
-    href: "#process",
-  },
-  {
-    label: "Analytics",
-    href: "#framework",
+    section: "process",
   },
   {
     label: "Reporting",
-    href: "#faq",
+    section: "faq",
   },
 ];
 
 const companyLinks = [
   {
-    label: "About",
-    href: "#home",
-  },
-  {
     label: "Process",
-    href: "#process",
-  },
-  {
-    label: "Framework",
-    href: "#framework",
+    section: "process",
   },
   {
     label: "FAQ",
-    href: "#faq",
+    section: "faq",
   },
   {
     label: "Case Studies",
-    href: "/case-studies",
+    action: "case-studies",
   },
 ];
 
@@ -70,6 +61,38 @@ const socialLinks = [
 ];
 
 function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollContext = useContext(ScrollContext);
+
+  const dashboardRef = scrollContext?.dashboardRef;
+  const processRef = scrollContext?.processRef;
+  const faqRef = scrollContext?.faqRef;
+  const scrollToSection = (section) => {
+    const refs = {
+      platform: dashboardRef,
+      process: processRef,
+      faq: faqRef,
+    };
+
+    const ref = refs[section];
+
+    if (ref?.current) {
+      ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      return;
+    }
+
+    navigate("/", {
+      state: {
+        scrollTo: section,
+      },
+    });
+  };
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#050505]">
       <Container>
@@ -250,14 +273,16 @@ function Footer() {
               <ul className="space-y-5">
                 {platformLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
+                    <button
+                      key={link.label}
+                      type="button"
+                      onClick={() => scrollToSection(link.section)}
                       className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:translate-x-1 hover:text-green-400"
                     >
                       <span>{link.label}</span>
 
-                      <ArrowUpRight className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100" />
-                    </a>
+                      <ArrowUpRight className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -273,14 +298,33 @@ function Footer() {
               <ul className="space-y-5">
                 {companyLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:translate-x-1 hover:text-green-400"
-                    >
-                      <span>{link.label}</span>
+                    {link.action === "case-studies" ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          navigate("/case-studies");
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }}
+                        className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:translate-x-1 hover:text-green-400"
+                      >
+                        <span>{link.label}</span>
 
-                      <ArrowUpRight className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:opacity-100" />
-                    </a>
+                        <ArrowUpRight className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => scrollToSection(link.section)}
+                        className="group inline-flex items-center gap-2 text-gray-400 transition-all duration-300 hover:translate-x-1 hover:text-green-400"
+                      >
+                        <span>{link.label}</span>
+
+                        <ArrowUpRight className="h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100" />
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
