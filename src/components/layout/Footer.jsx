@@ -384,7 +384,7 @@ function Footer() {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-gray-500">
+            {/*<div className="flex flex-wrap items-center justify-center gap-5 text-sm text-gray-500">
               <span>Built with React</span>
 
               <span className="hidden h-1 w-1 rounded-full bg-gray-600 md:block" />
@@ -398,7 +398,7 @@ function Footer() {
               <span className="hidden h-1 w-1 rounded-full bg-gray-600 md:block" />
 
               <span>Framer Motion</span>
-            </div>
+            </div>*/}
           </div>
         </div>
       </Container>
